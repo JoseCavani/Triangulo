@@ -6,11 +6,10 @@ namespace Triangulo.ConsoleApp1
     {
         static void Main(string[] args)
         {
-            bool sucesso;
             while (true)
             {
-                static void verificarTriangulo(decimal x, decimal y,decimal z)
-        {
+                static void verificarTriangulo(decimal x, decimal y, decimal z)
+                {
                     if (x != y && x != z && y != z)
                     {
                         Console.WriteLine("o triango digitado e escaleno");
@@ -41,45 +40,43 @@ namespace Triangulo.ConsoleApp1
 
 
                 Console.Clear();
-                voltaX:
-                    Console.WriteLine("digite o primeiro lado");
-                    sucesso = decimal.TryParse(Console.ReadLine(), out decimal x);
-                    if (sucesso == false)
-                    {
-                        Console.Clear();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("numero invalido");
-                        Console.ResetColor();
-                        Console.ReadKey();
-                        goto voltaX;
-                    }
-                voltaY:
-                    Console.WriteLine("digite o segundo lado");
-                    sucesso = decimal.TryParse(Console.ReadLine(), out decimal y);
-                    if (sucesso == false)
-                    {
-                        Console.Clear();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("numero invalido");
-                        Console.ResetColor();
-                        Console.ReadKey();
-                        goto voltaY;
-                    }
-                voltaZ:
-                    Console.WriteLine("digite o terceiro lado");
-                    sucesso = decimal.TryParse(Console.ReadLine(), out decimal z);
-                    if (sucesso == false)
-                    {
-                        Console.Clear();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("numero invalido");
-                        Console.ResetColor();
-                        Console.ReadKey();
-                        goto voltaZ;
+            voltaX:
+                Console.WriteLine("digite o primeiro lado");
+                if (!(decimal.TryParse(Console.ReadLine(), out decimal x)))
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("numero invalido");
+                    Console.ResetColor();
+                    Console.ReadKey();
+                    goto voltaX;
+                }
+            voltaY:
+                Console.WriteLine("digite o segundo lado");
+             if (!(decimal.TryParse(Console.ReadLine(), out decimal y)))
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("numero invalido");
+                   Console.ResetColor();
+                    Console.ReadKey();
+                    goto voltaY;
+                }
+            voltaZ:
+                Console.WriteLine("digite o terceiro lado");
+              
+                if (!(decimal.TryParse(Console.ReadLine(), out decimal z)))
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("numero invalido");
+                    Console.ResetColor();
+                    Console.ReadKey();
+                    goto voltaZ;
 
-                    }
+                }
 
-                    if (x+y<z || z+y<x || x+z < y)
+                if (x + y < z || z + y < x || x + z < y)
                 {
                     Console.WriteLine("Triangulo invalido");
                     Console.ReadKey();
@@ -88,7 +85,7 @@ namespace Triangulo.ConsoleApp1
                 }
 
                 verificarTriangulo(x, y, z);
-                Console.ReadKey();  
+                Console.ReadKey();
                 Console.Clear();
 
             }
