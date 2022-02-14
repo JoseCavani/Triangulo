@@ -9,6 +9,21 @@ namespace Triangulo.ConsoleApp1
             bool sucesso;
             while (true)
             {
+                static void verificarTriangulo(decimal x, decimal y,decimal z)
+        {
+                    if (x != y && x != z && y != z)
+                    {
+                        Console.WriteLine("o triango digitado e escaleno");
+                    }
+                    else if (x == y && x == z && y == z)
+                    {
+                        Console.WriteLine("o triango digitado e Eqüilátero");
+                    }
+                    else
+                        Console.WriteLine("o triango digitado e Isósceles");
+                }
+
+
             volta:
                 Console.Write("digite 1 para verificar o tipo do triangulo\nDigite s para sair\n");
                 string opcao = Console.ReadLine().ToLower();
@@ -72,17 +87,8 @@ namespace Triangulo.ConsoleApp1
                     goto volta;
                 }
 
-                if (x != y && x!= z && y != z)
-                {
-                    Console.WriteLine("o triango digitado e escaleno");
-                }
-                else if (x == y && x == z && y == z)
-                {
-                    Console.WriteLine("o triango digitado e Eqüilátero");
-                }
-                else
-                    Console.WriteLine("o triango digitado e Isósceles");
-                Console.ReadKey();
+                verificarTriangulo(x, y, z);
+                Console.ReadKey();  
                 Console.Clear();
 
             }
