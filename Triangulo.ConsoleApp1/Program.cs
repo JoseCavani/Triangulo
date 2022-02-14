@@ -12,14 +12,14 @@ namespace Triangulo.ConsoleApp1
                 {
                     if (x != y && x != z && y != z)
                     {
-                        Console.WriteLine("o triango digitado e escaleno");
+                        Console.WriteLine("o triangulo digitado e escaleno");
                     }
                     else if (x == y && x == z && y == z)
                     {
-                        Console.WriteLine("o triango digitado e Eqüilátero");
+                        Console.WriteLine("o triangulo digitado e Eqüilátero");
                     }
                     else
-                        Console.WriteLine("o triango digitado e Isósceles");
+                        Console.WriteLine("o triangulo digitado e Isósceles");
                 }
 
 
